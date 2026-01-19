@@ -91,8 +91,6 @@ def submit_review(card_id: int, quality: int) -> Dict[str, Any]:
         # Başarısız (Unuttum) -> Başa dön
         repetition = 0
         interval = 1
-        # Orijinal SM-2'de EF değişmez ama bazı varyasyonlarda azalır.
-        # Biz basit tutup EF'yi ellemiyoruz.
 
     # Yeni tarih hesapla
     next_review = datetime.date.today() + datetime.timedelta(days=interval)
