@@ -1,0 +1,17 @@
+# Python derleme dosyaları
+__pycache__/
+*.pyc
+
+# Sanal Ortam (Virtual Environment)
+.venv/
+venv/
+env/
+
+# PyCharm ayar dosyaları
+.idea/
+
+# Test sırasında oluşan geçici klasörler
+test_data_temp/
+
+# Veri tabanı (JSON dosyaları)
+data/
