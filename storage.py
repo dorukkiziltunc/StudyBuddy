@@ -20,7 +20,7 @@ def load_json(filename: str) -> List[Any]:
     """
     file_path = DATA_DIR / filename
 
-    # Dosya yoksa boş liste dön (uygulama çökmez)
+    # Dosya yoksa boş liste dön
     if not file_path.exists():
         return []
 
@@ -28,7 +28,7 @@ def load_json(filename: str) -> List[Any]:
         with open(file_path, "r", encoding="utf-8") as f:
             return json.load(f)
     except (json.JSONDecodeError, IOError):
-        # Dosya bozuksa veya okunamıyorsa boş liste dön (loglama eklenebilir)
+        # Dosya bozuksa veya okunamıyorsa boş liste dön
         return []
 
 
@@ -43,12 +43,11 @@ def save_json(filename: str, data: List[Any]) -> None:
     tmp_path = file_path.with_suffix(".tmp")
 
     try:
-        # Önce geçici dosyaya yaz
+         Önce geçici dosyaya yaz
         with open(tmp_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
 
-        # Yazma başarılıysa, asıl dosyanın üzerine taşı (Atomic Operation)
-        # Windows/Linux uyumlu olması için os.replace tercih edilir
+        # Yazma başarılıysa, asıl dosyanın üzerine taşı (Atomic Write)
         os.replace(tmp_path, file_path)
     except IOError as e:
         print(f"Hata: Veri kaydedilemedi. {e}")
