@@ -29,7 +29,6 @@ def create_card(deck_id: int, front: str, back: str) -> Dict[str, Any]:
     }
 
     # 2. SRS Başlangıç Durumu (Kutu 1, Bugün çalışılmalı)
-    # Şartnameye göre yeni kartlar hemen (bugün) review edilmeli.
     initial_srs = {
         "card_id": new_id,
         "box": 1,  # 1. Kutu (Her gün)
