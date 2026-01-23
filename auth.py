@@ -19,7 +19,7 @@ def _hash_password(password: str, salt_hex: str) -> str:
     password_bytes = password.encode('utf-8')
     salt_bytes = bytes.fromhex(salt_hex)
 
-    # 100.000 iterasyon güvenli kabul edilir
+    # 100.000 iterasyon güvenli
     hash_bytes = hashlib.pbkdf2_hmac('sha256', password_bytes, salt_bytes, 100000)
     return hash_bytes.hex()
 
