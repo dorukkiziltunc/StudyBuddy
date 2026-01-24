@@ -266,7 +266,7 @@ def _card_submenu(deck):
             try:
                 c_id = int(input("Silinecek Kart ID: "))
                 # Kartın bu desteye ait olduğunu kontrol etmek iyi olurdu ama
-                # şimdilik global ID ile siliyoruz (basitlik için)
+                # şimdilik global ID ile siliyoruz
                 if card_service.delete_card(c_id):
                     input("Kart silindi. Enter...")
                 else:
